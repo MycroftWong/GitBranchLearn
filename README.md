@@ -180,3 +180,31 @@ To https://github.com/MycroftWong/GitBranchLearn.git
  * [new branch]      master -> dev
 ```
 创建时，输入账号密码，创建并提交成功，可以看到是本地`master`分支提交到了远程`dev`分支，查看github, 也是如此
+
+## 五、创建分支跟踪
+理想状态：local dev -> local master -> remote dev -> remote master
+但是实际上只能本地分支跟踪远程分支
+
+### 用到的命令
+```
+```
+
+### 实际操作
+1. local dev -> local master 合并
+在前面已经讲述了，切换到`master`分支后，合并`dev`分支
+`git merge dev`
+
+2. local master -> remote dev 远程跟踪
+在以后`master`的直接`git pull`, `git push`时会自动提交到跟踪的远程分支
+```
+$ git branch -u origin/dev master
+Branch 'master' set up to track remote branch 'dev' from 'origin'.
+```
+这样，本地`master`就跟踪(`track`)了远程分支`dev`
+
+3. remote dev -> remote master
+并没有直接的命令，因为`local master`和`remote dev`是相同的，所以可以直接提交`local master`到`remote master`
+
+```
+git push origin master:master
+```
