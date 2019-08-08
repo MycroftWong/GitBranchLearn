@@ -99,3 +99,54 @@ $ git commit -m "测试提交dev分支"
 ```
 提交成功
 
+## 三、合并分支
+
+### 用到的命令
+```
+-- 合并分支
+git merge [branch-name]
+```
+
+### 实际操作
+
+1. 切换到主分支
+```
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+```
+
+2. 合并分支
+```
+$ git merge dev
+Updating 57c8d40..1e0b9f7
+Fast-forward
+ .idea/misc.xml |  2 +-
+ .idea/vcs.xml  |  6 ++++
+ README.md      | 97 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 104 insertions(+), 1 deletion(-)
+ create mode 100644 .idea/vcs.xml
+```
+这就将`dev`上修改的结果，合并到了`master`
+
+3. 查看状态
+```
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+```
+可以看到我在`dev`上的两次提交，也显示在了`master`中，并且查看文件，说明合并成功
+
+## 四、提交本地分支到远程分支
+
+### 用到的命令
+```
+-- 创建远程分支，并绑定本地分支推流
+git push --set-upstream origin [remote-branch-name]
+
+-- 创建并提交远程分支（若没有远程分支，则会自动创建）
+git push origin [local-branch-name]:[remote-branch-name]
+```
