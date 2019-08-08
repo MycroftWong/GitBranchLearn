@@ -208,3 +208,10 @@ Branch 'master' set up to track remote branch 'dev' from 'origin'.
 ```
 git push origin master:master
 ```
+
+## 参考
+[Android Studio Git 分支实践](http://wuxiaolong.me/2017/03/09/gitBranch/)
+[如何进行 git 分支管理？](https://coding.net/help/doc/git/git-branch.html)
+
+## 本项目
+[GitBranchLearn](https://github.com/MycroftWong/GitBranchLearn)
