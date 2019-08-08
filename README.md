@@ -144,9 +144,6 @@ nothing to commit, working tree clean
 
 ### 用到的命令
 ```
--- 创建远程分支，并绑定本地分支推流
-git push --set-upstream origin/[remote-branch-name] [local-branch-name]
-
 -- 创建并提交远程分支（若没有远程分支，则会自动创建）
 git push origin [local-branch-name]:[remote-branch-name]
 ```
@@ -163,6 +160,23 @@ $ git branch -a
 
 2. 创建远程分支`dev`
 ```
-$ git push --set-upstream origin/dev master
+$ git push origin master:dev
+fatal: HttpRequestException encountered.
+   发送请求时出错。
+Username for 'https://github.com': MycroftWong
+Password for 'https://MycroftWong@github.com':
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 1.83 KiB | 468.00 KiB/s, done.
+Total 10 (delta 6), reused 0 (delta 0)
+remote: Resolving deltas: 100% (6/6), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/MycroftWong/GitBranchLearn/pull/new/dev
+remote:
+To https://github.com/MycroftWong/GitBranchLearn.git
+ * [new branch]      master -> dev
 ```
-创建时，输入账号密码，创建并提交成功
+创建时，输入账号密码，创建并提交成功，可以看到是本地`master`分支提交到了远程`dev`分支，查看github, 也是如此
