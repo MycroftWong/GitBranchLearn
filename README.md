@@ -145,8 +145,24 @@ nothing to commit, working tree clean
 ### 用到的命令
 ```
 -- 创建远程分支，并绑定本地分支推流
-git push --set-upstream origin [remote-branch-name]
+git push --set-upstream origin/[remote-branch-name] [local-branch-name]
 
 -- 创建并提交远程分支（若没有远程分支，则会自动创建）
 git push origin [local-branch-name]:[remote-branch-name]
 ```
+
+### 实际操作
+1. 查看当前分支
+```
+$ git branch -a
+  dev
+* master
+  remotes/origin/master
+```
+可以看到所有的分支，当前所在分支是`master`
+
+2. 创建远程分支`dev`
+```
+$ git push --set-upstream origin/dev master
+```
+创建时，输入账号密码，创建并提交成功
