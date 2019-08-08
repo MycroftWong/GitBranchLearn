@@ -39,7 +39,7 @@ $ git branch -a
   master
   remotes/origin/master
 ```
-其中`*`表示当前分支
+可以看到所有的分支：本地`dev`, `master`, 远程`remotes/origin/master`，其中`*`表示当前分支
 
 
 ## 二、将本地分支项目提交到本地主分支
@@ -55,3 +55,47 @@ git add [file-name]
 -- 提交
 git commit -m "comment info"
 ```
+
+### 实际操作
+1. 查看当前状态
+```
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .idea/vcs.xml
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README.md
+```
+可以看到`Android Studio`自动创建了一个`.idea/vcs.xml`文件，等待提交，`README.md`文件修改过，等待添加、提交
+
+2. 添加文件
+`git add README.md`
+添加`README.md`
+
+3. 查看状态
+```
+$ git status
+On branch dev
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   .idea/vcs.xml
+        modified:   README.md
+```
+可以看到上述两个文件等待提交
+
+4. 提交
+```
+$ git commit -m "测试提交dev分支"
+[dev 7c5254a] 测试提交dev分支
+ 2 files changed, 59 insertions(+)
+ create mode 100644 .idea/vcs.xml
+```
+提交成功
+
